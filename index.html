@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FedEx Company - Shipment Tracking Demo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #4d148c;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 14px;
+        }
+
+        .notice {
+            background: #fff3cd;
+            color: #664d03;
+            padding: 12px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #ff6600;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e85d00;
+        }
+
+        #result {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #f1f1f1;
+        }
+
+        .status {
+            color: #4d148c;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .details {
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>FedEx Company</h1>
+    <p>Shipment Tracking</p>
+</header>
+
+<div class="notice">
+    Independent tracking demonstration — not the official FedEx website.
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Track Your Shipment</h2>
+
+        <p>
+            Enter your tracking number below to view the shipment information.
+        </p>
+
+        <label for="trackingNumber">
+            Tracking Number
+        </label>
+
+        <input
+            type="text"
+            id="trackingNumber"
+            placeholder="Enter tracking number"
+        >
+
+        <button onclick="trackShipment()">
+            Track Shipment
+        </button>
+
+        <div id="result">
+
+            <div class="status">
+                Shipment Status: In Transit
+            </div>
+
+            <div class="details">
+                <strong>Tracking Number:</strong>
+                <span id="displayTracking"></span>
+                <br>
+
+                <strong>Origin:</strong>
+                United States
+                <br>
+
+                <strong>Destination:</strong>
+                Chairman
+                <br>
+
+                <strong>Current Location:</strong>
+                United States
+                <br>
+
+                <strong>Estimated Delivery:</strong>
+                Processing
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2026 FedEx Company — Independent Demonstration
+</div>
+
+<script>
+    function trackShipment() {
+
+        const trackingNumber =
+            document.getElementById("trackingNumber").value.trim();
+
+        if (trackingNumber === "") {
+            alert("Please enter a tracking number.");
+            return;
+        }
+
+        document.getElementById("displayTracking").textContent =
+            trackingNumber;
+
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+
+</body>
+  </html>
